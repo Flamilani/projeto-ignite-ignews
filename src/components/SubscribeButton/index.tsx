@@ -5,7 +5,7 @@ import styles from './styles.module.scss';
 import { useRouter } from 'next/router';
 
 export function SubscribeButton() {
-    const session = useSession().data;
+    const { data: session } = useSession();
     const router = useRouter();
 
     async function handleSubscribe() {
