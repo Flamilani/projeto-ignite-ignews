@@ -11,12 +11,17 @@ export default NextAuth({
     GithubProvider({
       clientId: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
+      authorization: {
+        params: {
+          scope: 'read:user',
+        },
+      },
     }),
     // ...add more providers here
   ],
   callbacks: {
-    async session({session}){
-      
+    async session({ session }) {
+      session.user.email
       try{
         const userActiveSubscription = await fauna.query(
           q.Get(
@@ -52,7 +57,7 @@ export default NextAuth({
         }
       }
     },
-    async signIn({ user, account, profile, email, credentials }) {
+    async signIn({ user, account, profile }) {
 
 
       try {
