@@ -23,7 +23,8 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",
     "sass": "^1.54.4",
-    "stripe": "^10.7.0"
+    "stripe": "^10.7.0",
+    "vercel": "^28.10.1"
   },
   "devDependencies": {
     "@testing-library/dom": "^8.19.1",
